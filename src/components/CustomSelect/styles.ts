@@ -1,6 +1,8 @@
+import { StylesConfig, GroupBase } from "react-select";
+import { IOption } from "../../types/types";
 import { Color } from "../../ui/colors";
 
-export const customStyles = {
+export const customStyles: StylesConfig<IOption, false, GroupBase<IOption>> = {
     control: () => ({
       width: "100%",
       display: "flex",
@@ -14,8 +16,8 @@ export const customStyles = {
       width: 0,
     }),
 
-    singleValue: (provided: any) => ({
+    singleValue: (provided) => ({
       ...provided,
      textAlign: 'center',
-   }),
+      }),
   };
