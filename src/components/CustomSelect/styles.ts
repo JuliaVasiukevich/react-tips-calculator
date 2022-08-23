@@ -13,4 +13,9 @@ export const customStyles = {
     indicatorSeparator: () => ({
       width: 0,
     }),
+
+    singleValue: (provided: any) => ({
+      ...provided,
+     textAlign: 'center',
+   }),
   };
