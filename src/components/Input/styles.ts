@@ -1,4 +1,3 @@
-import { Color } from './../../ui/colors';
 import styled from "styled-components";
 
 

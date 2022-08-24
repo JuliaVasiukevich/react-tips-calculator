@@ -1,10 +1,9 @@
-import React from "react";
 import { ButtonStyled } from "./styles";
 
 interface IProps {
-  disabled: boolean; 
+  isDisabled: boolean; 
 }
 
-export const Button = ({ disabled }: IProps) => {
-  return <ButtonStyled  $disabled={disabled}> Ohhhoooo 🍻 </ButtonStyled>;
+export const Button = ({ isDisabled }: IProps) => {
+  return <ButtonStyled  $disabled={isDisabled}> Ohhhoooo 🍻 </ButtonStyled>;
 };

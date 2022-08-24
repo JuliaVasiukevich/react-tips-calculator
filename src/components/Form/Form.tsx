@@ -1,6 +1,5 @@
 import { FormEvent, useEffect, useState } from "react";
 import { useInput } from "../../hooks/useInput";
-import { useSelect } from "../../hooks/useSelect";
 import { StyledForm, Title, Subtitle, Total } from "./styles";
 import { Button } from "../Button/Button";
 import { CustomSelect } from "../CustomSelect/CustomSelect";
@@ -16,26 +15,24 @@ export const options: IOption[] = [
 export const Form = () => {
   const bill = useInput();
   const persons = useInput();
-  const select = useSelect(options[0]);
-  const [isBtnActive, setBtnActive] = useState<boolean>();
+  const [tipsValue, setTipsValue] = useState<number>(options[0].value);
+  const [isDisabled, setDisabled] = useState<boolean>(true);
   const [total, setTotal] = useState<number>(0);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     let total = 0;
-    if (select.value) {
-      total = (+bill.value * (select?.value?.value / 100 + 1)) / +persons.value;
-    }
+      total = (+bill.value * (tipsValue / 100 + 1)) / +persons.value;
 
     setTotal(total);
   };
 
   useEffect(() => {
     if (bill.value && persons.value) {
-      setBtnActive(false);
+      setDisabled(true);
     } else {
-      setBtnActive(true);
+      setDisabled(false);
     }
   }, [bill.value, persons.value]);
 
@@ -45,9 +42,9 @@ export const Form = () => {
       <Subtitle>Let’s go calculate your tips</Subtitle>
       <Input placeholder="Enter bill" type="number" {...bill} />
       <Input placeholder="Enter  persons" type="number" {...persons} />
-      <CustomSelect options={options} {...select} />
+      <CustomSelect options={options} onChange={setTipsValue} value={tipsValue}/>
       <Total>Total: {total?.toFixed(2)} $</Total>
-      <Button disabled={!isBtnActive} />
+      <Button isDisabled={isDisabled} />
     </StyledForm>
   );
 };
