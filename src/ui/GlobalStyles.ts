@@ -1,5 +1,6 @@
 import { Color } from "./colors";
 import { createGlobalStyle } from "styled-components";
+import circles from "../assets/circles.svg";
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -13,18 +14,14 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    line-height: 24px;
 }
 
 body {
-    height: 100vh;
-    background-color: ${Color.primary};
-    background-image: url(${require("./../assets/circles.svg").default});
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: ${Color.Primary};
+    background-image: url(${circles});
     background-repeat: no-repeat; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 `;

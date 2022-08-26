@@ -23,7 +23,6 @@ export const CustomSelect = ({ value, onChange }: IProps) => {
     <Select
       styles={customStyles}
       options={options}
-      defaultValue={options[0]}
       onChange={handleTips}
       value={getTipsValue()}
       isMulti={false}

@@ -3,15 +3,15 @@ import styled from "styled-components";
 
 const ButtonStyled = styled.button<{ $disabled: boolean}>`
   display: inline-block;
-  color: ${Color.white};
-  background-color: ${Color.primaryBright};
+  color: ${Color.White};
+  background-color: ${Color.PrimaryBright};
   font-size: 24px;
   border: none;
   display: block;
   width: 100%;
   padding-block: 13px;
-   opacity: ${({ $disabled }) => ($disabled ? "1" : "0.5")};
-   cursor: ${({ $disabled }) => ($disabled ? "pointer" : "not-allowed")};
+   opacity: ${({ $disabled }) => ($disabled ? "0.5" : "1")};
+   cursor: ${({ $disabled }) => ($disabled ? "not-allowed" : "pointer")};
 `;
 
 export { ButtonStyled };

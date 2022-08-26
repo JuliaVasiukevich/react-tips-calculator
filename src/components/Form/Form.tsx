@@ -22,17 +22,16 @@ export const Form = () => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    let total = 0;
-      total = (+bill.value * (tipsValue / 100 + 1)) / +persons.value;
+    const total = (+bill.value * (tipsValue / 100 + 1)) / +persons.value;
 
     setTotal(total);
   };
 
   useEffect(() => {
     if (bill.value && persons.value) {
-      setDisabled(true);
-    } else {
       setDisabled(false);
+    } else {
+      setDisabled(true);
     }
   }, [bill.value, persons.value]);
 
@@ -43,7 +42,7 @@ export const Form = () => {
       <Input placeholder="Enter bill" type="number" {...bill} />
       <Input placeholder="Enter  persons" type="number" {...persons} />
       <CustomSelect options={options} onChange={setTipsValue} value={tipsValue}/>
-      <Total>Total: {total?.toFixed(2)} $</Total>
+      <Total>Total: {total.toFixed(2)} $</Total>
       <Button isDisabled={isDisabled} />
     </StyledForm>
   );

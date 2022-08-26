@@ -9,6 +9,7 @@ const InputStyled = styled.input`
   outline: none;
   text-align: center;
   padding: 20px;
+  font-size: 16px;
 `;
 
 export { InputStyled };

@@ -5,5 +5,6 @@ interface IProps {
 }
 
 export const Button = ({ isDisabled }: IProps) => {
-  return <ButtonStyled  $disabled={isDisabled}> Ohhhoooo 🍻 </ButtonStyled>;
+  console.log(isDisabled)
+  return <ButtonStyled disabled={isDisabled} $disabled={isDisabled}> Ohhhoooo 🍻 </ButtonStyled>;
 };

@@ -1,5 +1,5 @@
 export enum Color {
-    primary = '#EAF2F2',
-    primaryBright = '#2ED2C9',
-    white = '#FFFFFF'
+  Primary = "#EAF2F2",
+  PrimaryBright = "#2ED2C9",
+  White = "#FFFFFF",
 }
